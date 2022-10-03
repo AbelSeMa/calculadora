@@ -10,34 +10,41 @@
 
 <body>
     <?php
+
+    function calcular_resultado($oper1, $oper2, $oper)
+    {
+
+        switch ($oper) {
+            case '+':
+                $resultado = $oper1 + $oper2;
+                break;
+
+            case '-':
+                $resultado = $oper1 - $oper2;
+                break;
+
+            case '*':
+                $resultado = $oper1 * $oper2;
+                break;
+
+            case '/':
+                $resultado = $oper1 / $oper2;
+                break;
+
+            default:
+                $resultado = 'Error: Operación incorrecta.';
+        }
+        return $resultado;
+    }
     $op1 = trim($_GET['operador1']);
     $op2 = trim($_GET['operador2']);
     $op = trim($_GET['operacion']);
 
-    switch ($op) {
-        case '+':
-            $resultado = $op1 + $op2;
-            break;
-
-        case '-':
-            $resultado = $op1 - $op2;
-            break;
-
-        case '*':
-            $resultado = $op1 * $op2;
-            break;
-
-        case '/':
-            $resultado = $op1 / $op2;
-            break;
-
-        default:
-        $resultado = 'Error: Operación incorrecta.';
-    }
+    $res = calcular_resultado($op1, $op2, $op);
 
     ?>
 
-    <p>El resultado de <?= "$op1 $op $op2" ?> es <?= $resultado ?> </p>
+    <p>El resultado de <?= "$op1 $op $op2" ?> es <?= $res ?> </p>
 </body>
 
 </html>
