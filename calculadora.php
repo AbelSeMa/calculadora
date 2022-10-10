@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
     <?php
     require 'auxiliar.php';
 
@@ -18,7 +19,29 @@
 
     $res = calcular_resultado($op1, $op2, $op);
 
-    ?>
+    ?><form action="" method="get">
+    <div>
+        <label>
+            Primer operando:
+            <input type="text" name="operador1">
+        </label>
+    </div>
+    <div>
+        <label>
+            Segundo operando:
+            <input type="text" name="operador2">
+        </label>
+    </div>
+    <div>
+        <label>
+            Operacion:
+            <input type="text" name="operacion">
+        </label>
+    </div>
+    <button type="submit">Calcular</button>
+</form>
+
+
 
     <p>El resultado de <?= "$op1 $op $op2" ?> es <?= $res ?> </p>
     <button> <a href="calculadora.html">Volver</a> </button>
